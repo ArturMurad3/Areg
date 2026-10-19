@@ -314,4 +314,75 @@
           </span>
           <span class="text">
             <span class="label">Զանգ</span>
-            <span class="val
+            <span class="value">+374 94 26 35 61</span>
+          </span>
+          <span class="go">↗</span>
+        </a>
+
+        <a class="contact" href="viber://chat?number=%2B37494263561">
+          <span class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21c-1.1 0-2.2-.2-3.2-.6L4 21l1-4.6C4.3 15 4 13.6 4 12.1 4 6.5 8.5 3 12 3s8 3.5 8 9.1S15.5 21 12 21z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5" /><circle cx="9" cy="9.5" r=".6" fill="currentColor" stroke="none"/></svg>
+          </span>
+          <span class="text">
+            <span class="label">Viber</span>
+            <span class="value">+374 94 26 35 61</span>
+          </span>
+          <span class="go">↗</span>
+        </a>
+
+        <a class="contact" href="https://wa.me/37494263561" target="_blank" rel="noopener">
+          <span class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21c-1.1 0-2.2-.2-3.2-.6L4 21l1-4.6C4.3 15 4 13.6 4 12.1 4 6.5 8.5 3 12 3s8 3.5 8 9.1S15.5 21 12 21z"/><path d="M8.7 8.6c.2-.4.5-.5.8-.5h.5c.2 0 .4 0 .6.4.2.5.6 1.5.6 1.6.1.1.1.3 0 .4-.1.2-.2.3-.3.4-.1.1-.3.3-.4.4-.1.1-.3.3-.1.6.2.3.8 1.2 1.7 2 1.1 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1.2-.2.7-.8.9-1 .2-.2.3-.2.6-.1.2.1 1.5.7 1.8.8.3.1.4.2.5.3.1.2.1.9-.2 1.5-.3.6-1.5 1.2-2.1 1.3-.5.1-1.1.1-3.6-1-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.2-1.6-1.2-3s.7-2.2 1-2.5z"/></svg>
+          </span>
+          <span class="text">
+            <span class="label">WhatsApp</span>
+            <span class="value">+374 94 26 35 61</span>
+          </span>
+          <span class="go">↗</span>
+        </a>
+
+        <a class="contact" href="https://t.me/+37494263561" target="_blank" rel="noopener">
+          <span class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 4L3 11l6 2.5M21 4L15 20l-6-6.5M21 4L9 13.5"/></svg>
+          </span>
+          <span class="text">
+            <span class="label">Telegram</span>
+            <span class="value">+374 94 26 35 61</span>
+          </span>
+          <span class="go">↗</span>
+        </a>
+      </div>
+
+      <button class="save" onclick="saveContact()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v13m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+        Պահպանել կոնտակտում
+      </button>
+    </div>
+    <p class="foot">ԱՐԵԳ ՄՈՎՍԻՍՅԱՆ</p>
+  </div>
+
+<script>
+function saveContact(){
+  const vcard = [
+    "BEGIN:VCARD",
+    "VERSION:3.0",
+    "N:Մովսիսյան;Արեգ;;;",
+    "FN:Մովսիսյան Արեգ",
+    "TEL;TYPE=CELL,VOICE:+37494263561",
+    "END:VCARD"
+  ].join("\r\n");
+
+  const blob = new Blob([vcard], { type: "text/vcard;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "Մովսիսյան_Արեգ.vcf";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+</script>
+
+</body>
+</html>
